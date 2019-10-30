@@ -1,0 +1,38 @@
+﻿@model Lab23Breakout.Models.Products
+
+@{
+    ViewData["Title"] = "Buy";
+}
+
+
+@{
+    Products p = new Products();
+    User u = new User();
+
+    <h1>Buy</h1>
+
+    <div>
+        <h4>Do you want to buy this pastry?</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Receipt" asp-route-id="@p.Id">Yes</a> |
+        <a asp-action="Index">No</a>
+    </div>
+
+}
+
